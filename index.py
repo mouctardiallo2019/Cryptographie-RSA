@@ -1,22 +1,14 @@
 #!/usr/bin/env python3
 #-*- coding:utf-8 -*-
-
-
-
 import random, sys, os
-
-
 def gcd(a, b):
     # Retour le PGCD de a et b en utilisant l'algorithme d'Euclide 
     while a != 0:
         a, b = b % a, a
     return b
-
-
 def findModInverse(a, m):
     # Renvoie l'inverse modulaire d'un% m, ce qui est
 	# le nombre x de telle sorte que a * x% m = 1
-
     if gcd(a, m) != 1:
         return None # pas d'inverse mod si un m & ne sont pas premiers entre eux
 
@@ -142,9 +134,6 @@ def generateLargePrime(keysize=1024):
         num = random.randrange(2**(keysize-1), 2**(keysize))
         if isPrime(num):
             return num
-
-
-
 
 # IMPORTANT: La taille de bloc doit être inférieure ou égale à la taille de la clé!
 # (Remarque: La taille de bloc est en octets, la taille de la clé est en bits Il.
@@ -301,13 +290,6 @@ def main():
 
         print('Texte déchiffré :')
         print(decryptedText)
-
-
-
-
-
-
-
 
 # Lancement s'il n'est pas importé comme module.
 if __name__ == '__main__':
